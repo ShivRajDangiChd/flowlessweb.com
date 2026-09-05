@@ -68,6 +68,17 @@ export default function RootLayout({
                 url: profile.site,
                 email: profile.email,
                 image: `${profile.site}/shivraj.png`,
+                description: profile.bio,
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Chandigarh",
+                  addressCountry: "IN",
+                },
+                worksFor: {
+                  "@type": "Organization",
+                  name: profile.company,
+                },
+                sameAs: [profile.links.github, profile.links.linkedin],
                 knowsAbout: skillKeywords,
               },
               {

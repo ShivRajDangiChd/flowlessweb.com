@@ -1,9 +1,18 @@
 export const profile = {
   name: "Shiv Raj",
+  handle: "ShivRajDangiChd",
   role: "Full-Stack Developer",
-  location: "India",
+  company: "AllHeartWeb PVT LTD",
+  location: "Chandigarh, India",
+  experience: "5+ years",
+  bio: "With over 5 years of experience, I am a seasoned Full Stack Developer specializing in both frontend and backend development.",
   email: "shivdangi28@gmail.com",
   site: "https://flowlessweb.com",
+  photos: ["/shivraj.png", "/shivraj-2.png"],
+  links: {
+    github: "https://github.com/ShivRajDangiChd",
+    linkedin: "https://www.linkedin.com/in/shivrajdangichd",
+  },
   summary:
     "I design and ship production web systems — Laravel, Node.js, and Python APIs, Next.js frontends, payment rails, and live deploys on AWS, GCP, and Azure — with a bias for performance, security, and clean APIs.",
   about: [

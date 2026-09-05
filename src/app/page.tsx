@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { HeroPhoto } from "@/components/hero-photo";
 import { ProjectGrid } from "@/components/project-grid";
 import { SiteShell } from "@/components/site-shell";
 import { SkillGrid } from "@/components/skill-grid";
@@ -49,13 +49,9 @@ export default function Home() {
 
           <div className="relative mx-auto w-full max-w-sm">
             <div className="absolute -inset-3 rounded-[2rem] border border-[var(--line)]" />
-            <Image
-              src="/shivraj.png"
-              alt="Portrait of Shiv Raj, full-stack developer"
-              width={480}
-              height={480}
-              priority
-              className="relative z-10 aspect-square w-full rounded-[1.6rem] object-cover grayscale-[0.15]"
+            <HeroPhoto
+              photos={profile.photos}
+              alt={`Portrait of ${profile.name}, full-stack developer`}
             />
             <p className="mt-4 font-mono text-xs tracking-widest text-[var(--muted)] uppercase">
               {profile.name} — available for product work

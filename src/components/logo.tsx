@@ -1,29 +1,21 @@
-import { profile } from "@/data/profile";
+import { site } from "@/data/site";
 
-export function Logo({ compact = false }: { compact?: boolean }) {
-  const initials = profile.name
-    .split(" ")
-    .map((part) => part[0])
-    .join("");
-
+export function Logo() {
   return (
-    <span className="group flex items-center gap-3">
-      <span className="grid size-10 place-items-center rounded-xl border border-[var(--line)] bg-[linear-gradient(140deg,rgba(212,164,90,0.32),rgba(212,164,90,0.04))] transition-colors group-hover:border-[var(--accent)]">
-        <span className="font-[family-name:var(--font-display)] text-sm leading-none tracking-[0.02em] text-[var(--accent)]">
-          {initials}
-        </span>
+    <span className="group flex items-center gap-2.5">
+      <span className="grid size-9 place-items-center rounded-xl bg-gradient-to-br from-[var(--accent)] to-[var(--accent-2)]">
+        <svg viewBox="0 0 64 64" className="size-5" aria-hidden="true">
+          <path
+            d="M20 46V18h24M20 31h16"
+            fill="none"
+            stroke="#fff"
+            strokeWidth="7"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </span>
-
-      {compact ? null : (
-        <span className="flex flex-col leading-none">
-          <span className="font-[family-name:var(--font-display)] text-[17px] tracking-tight">
-            {profile.name}
-          </span>
-          <span className="mt-1 hidden font-mono text-[10px] tracking-[0.18em] text-[var(--muted)] uppercase sm:block">
-            {profile.role}
-          </span>
-        </span>
-      )}
+      <span className="text-[17px] font-semibold tracking-tight">{site.name}</span>
     </span>
   );
 }

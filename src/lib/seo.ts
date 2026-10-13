@@ -1,21 +1,5 @@
 import type { Metadata } from "next";
-import { profile, skillKeywords } from "@/data/profile";
-
-export const defaultKeywords = [
-  "Shiv Raj",
-  "Full Stack Developer",
-  "Laravel Developer",
-  "Next.js Developer",
-  "Stripe Integration",
-  "Razorpay Integration",
-  "Firebase Developer",
-  "Python REST API",
-  "Node.js Developer",
-  "AWS",
-  "GCP",
-  "Azure",
-  ...skillKeywords,
-];
+import { site } from "@/data/site";
 
 export function pageMetadata({
   title,
@@ -26,24 +10,14 @@ export function pageMetadata({
   description: string;
   path: string;
 }): Metadata {
-  const url = new URL(path, profile.site).toString();
+  const url = new URL(path, site.url).toString();
+  const full = path === "/" ? title : `${title} | ${site.name}`;
 
   return {
     title: path === "/" ? { absolute: title } : title,
     description,
-    keywords: defaultKeywords,
     alternates: { canonical: url },
-    openGraph: {
-      title: path === "/" ? title : `${title} | ${profile.name}`,
-      description,
-      url,
-      siteName: `${profile.name} Portfolio`,
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title: path === "/" ? title : `${title} | ${profile.name}`,
-      description,
-    },
+    openGraph: { title: full, description, url, siteName: site.name, type: "website" },
+    twitter: { card: "summary", title: full, description },
   };
 }

@@ -48,3 +48,11 @@ body {
 @media (prefers-reduced-motion: no-preference) {
   .float { animation: float 6s ease-in-out infinite; }
 }
+
+@keyframes flow {
+  to { stroke-dashoffset: -14; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .flow-line { stroke-dasharray: 7 7; animation: flow 0.9s linear infinite; }
+}

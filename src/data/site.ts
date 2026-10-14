@@ -2,6 +2,8 @@ export const site = {
   name: "Flowlessweb",
   url: "https://flowlessweb.com",
   email: "shivdangi28@gmail.com",
+  phone: "+919041925042",
+  whatsapp: "919041925042",
   description:
     "Flowlessweb is a web, mobile app and AI development studio. We build websites, e-commerce stores, Android and iOS apps, AI-based products, chatbots and automation for growing businesses.",
 };
@@ -116,38 +118,56 @@ export const categories: ServiceCategory[] = [
     summary:
       "AI built for a specific business problem: answering customers, qualifying leads, reading documents or powering a new product.",
     bestFor: "Businesses that want to save hours of manual work, and founders building AI-first products",
-    tech: "OpenAI, Claude, Python, vector search, Next.js, WhatsApp API",
-    delivery: "2–10 weeks",
+    tech: "OpenAI, Claude, MCP, Python, vector search, Next.js, WhatsApp API",
+    delivery: "2–16 weeks",
     offerings: [
       {
-        title: "AI Chatbots & Assistants",
-        text: "An assistant trained on your own services, prices and documents that answers customers around the clock.",
-        points: ["Answers only from your approved content", "Website chat and WhatsApp", "Captures leads, hands over to a human", "Hindi, English and more"],
+        title: "AI Customer Support Chatbot",
+        text: "A chat assistant on your website and WhatsApp that answers customer questions instantly, in their language.",
+        points: ["Answers only from your approved content", "Hindi, English and other languages", "Hands over to your team when it is unsure", "Chat history and reports for you"],
         delivery: "2–4 weeks",
       },
       {
-        title: "Workflow Automation",
-        text: "Connect forms, email, sheets and CRM, with AI handling the repetitive middle steps.",
-        points: ["Lead scoring and routing", "Invoice and document data extraction", "Auto follow-ups and reminders", "Daily and weekly reports"],
-        delivery: "1–4 weeks",
+        title: "AI Sales & Lead Assistant",
+        text: "Talks to every enquiry, asks the right questions and passes only serious leads to your sales team.",
+        points: ["Asks budget, need and timeline", "Scores leads and sends them to your CRM", "Books calls on your calendar", "Follows up automatically"],
+        delivery: "2–4 weeks",
       },
       {
-        title: "AI Features for Your Product",
-        text: "Add smart search, summaries, recommendations and generation to an app you already run.",
-        points: ["Semantic search over products or documents", "Ask-your-documents Q&A (RAG)", "Personalised recommendations", "Text and image generation"],
+        title: "Chat with Your Documents",
+        text: "A private assistant that answers from your PDFs, policies, manuals and internal knowledge, with the source shown.",
+        points: ["Upload PDFs, docs and web pages", "Answers with page and source references", "Per-team access control", "For staff, customers or both"],
+        delivery: "3–6 weeks",
+      },
+      {
+        title: "AI Document Processing",
+        text: "Reads invoices, resumes, forms and emails, and turns them into clean, structured data.",
+        points: ["Extracts fields into Sheets, ERP or database", "Handles scans and different layouts", "Flags low-confidence items for review", "Saves hours of data entry"],
+        delivery: "2–6 weeks",
+      },
+      {
+        title: "AI Search & Recommendations",
+        text: "Search that understands intent, and suggestions that match each visitor, for stores, catalogues and content sites.",
+        points: ["Understands “red saree under 5000”", "Similar-item and “you may like” suggestions", "Works on your existing catalogue", "Better discovery, more orders"],
         delivery: "3–8 weeks",
       },
       {
-        title: "AI SaaS Products & Agents",
-        text: "A complete AI-first product, from idea to MVP: interface, backend, billing and the AI itself.",
-        points: ["Product scoping and MVP plan", "Agents that use tools and your data", "Usage tracking and subscription billing", "Cost and quality monitoring"],
-        delivery: "8–16 weeks",
+        title: "AI Agents with MCP",
+        text: "An assistant that does tasks in your own tools, such as updating the CRM, creating a booking or sending a report, through MCP (Model Context Protocol).",
+        points: ["Custom MCP servers for your CRM, sheets, email and APIs", "Permission scopes: it only does what you allow", "Audit log of every action", "Approval step for sensitive actions"],
+        delivery: "3–8 weeks",
       },
       {
-        title: "AI-assisted Content & SEO",
-        text: "Publish more useful pages without losing brand voice. AI drafts, a human reviews and approves.",
-        points: ["Content workflows with human review", "Programmatic SEO templates", "Bulk product descriptions", "Multi-language versions"],
-        delivery: "2–6 weeks",
+        title: "AI Content & SEO Studio",
+        text: "A tool for your team to draft pages, product descriptions and posts in your brand voice, with a human review step before publishing.",
+        points: ["Bulk product and category descriptions", "SEO page templates by city or service", "Multi-language versions", "Editor approval before anything goes live"],
+        delivery: "3–6 weeks",
+      },
+      {
+        title: "Custom AI Product (MVP)",
+        text: "Your own AI-first idea built end to end: interface, backend, AI, billing and admin.",
+        points: ["Scoping and a clear MVP plan", "Web or mobile interface", "Usage tracking and subscription billing", "Cost and answer-quality monitoring"],
+        delivery: "8–16 weeks",
       },
     ],
   },
@@ -343,52 +363,168 @@ export const process = [
   },
 ];
 
-export const faqs = [
+export const faqGroups = ["Getting started", "Websites & apps", "AI & automation", "After launch"] as const;
+
+export type Faq = { group: (typeof faqGroups)[number]; q: string; a: string };
+
+export const faqs: Faq[] = [
+  // Getting started
   {
+    group: "Getting started",
+    q: "What do I need to get started?",
+    a: "Just an idea of what you want. Send us a short note about your business and goals, and we’ll reply with questions and a suggested plan.",
+  },
+  {
+    group: "Getting started",
+    q: "How much does a project cost?",
+    a: "Cost depends on the pages, features and integrations you need, so we don’t quote from a fixed price list. After a short discussion you get a written scope and a fixed quote, and you approve it before any work starts.",
+  },
+  {
+    group: "Getting started",
+    q: "How does payment work?",
+    a: "Payment is split into stages tied to milestones, and the schedule is agreed in writing before work begins, so there are no surprises.",
+  },
+  {
+    group: "Getting started",
+    q: "How will I know how the project is going?",
+    a: "You get a private preview link to see real progress, plus regular updates on WhatsApp or email, and you review each stage before we move on.",
+  },
+  {
+    group: "Getting started",
+    q: "Who owns the website and code?",
+    a: "You do. Domain, hosting accounts and source code are set up in your name.",
+  },
+
+  // Websites & apps
+  {
+    group: "Websites & apps",
     q: "How long does a website take?",
     a: "A landing page takes days, a business website 2–4 weeks, and an online store or web app 4–16 weeks depending on features. You get the exact timeline in writing before we start.",
   },
   {
+    group: "Websites & apps",
+    q: "Will my website work well on mobile phones?",
+    a: "Yes. Every site is designed mobile-first and tested on phones, tablets and desktops, because most of your visitors are on their phones.",
+  },
+  {
+    group: "Websites & apps",
+    q: "Will my website rank on Google?",
+    a: "We build in the SEO foundations: fast loading, clean structure, proper titles and descriptions, and a sitemap. Nobody can honestly guarantee a number-one ranking, but a well-built site gives you the best start, and we can continue with SEO tune-ups.",
+  },
+  {
+    group: "Websites & apps",
+    q: "Can I update the content myself?",
+    a: "Yes. Where it makes sense we add a content management system, so your team can edit text, images and blog posts without needing a developer.",
+  },
+  {
+    group: "Websites & apps",
+    q: "Do you handle hosting and the domain name?",
+    a: "We set up hosting and your domain in your own accounts and guide you to a plan that fits your traffic. You pay the provider directly, so you stay in control.",
+  },
+  {
+    group: "Websites & apps",
+    q: "Can you redesign my existing website?",
+    a: "Yes. We refresh the design and speed while protecting your current Google rankings, and we migrate hosting if needed.",
+  },
+  {
+    group: "Websites & apps",
+    q: "Can you connect payment gateways and other tools?",
+    a: "Yes. We integrate Razorpay, Stripe and other gateways, along with SMS, WhatsApp, email, CRM and accounting tools.",
+  },
+  {
+    group: "Websites & apps",
     q: "Do you build both Android and iOS apps?",
     a: "Yes. We build cross-platform apps from one codebase, so you launch on both Google Play and the App Store together and maintain a single product.",
   },
+
+  // AI & automation
   {
+    group: "AI & automation",
     q: "Can you add AI to my existing website?",
     a: "Yes. A chatbot, smart search or automation can be added to most existing sites without rebuilding them.",
   },
   {
+    group: "AI & automation",
     q: "How do you stop the AI giving wrong answers?",
     a: "Assistants are grounded in your own content and told to say they don’t know when the answer isn’t there. Anything sensitive is handed over to a person, and we review real conversations after launch.",
   },
   {
-    q: "Who owns the website and code?",
-    a: "You do. Domain, hosting accounts and source code are set up in your name.",
+    group: "AI & automation",
+    q: "Will the AI chatbot work in Hindi?",
+    a: "Yes. Assistants can reply in Hindi, English and other languages, matching the language the customer writes in.",
   },
   {
+    group: "AI & automation",
+    q: "Is my business data safe with AI?",
+    a: "Your content is used only to power your own assistant. We keep keys and customer data secured, can leave out sensitive information, and explain which AI providers see which data before we start.",
+  },
+  {
+    group: "AI & automation",
+    q: "What is MCP and why does it matter?",
+    a: "MCP (Model Context Protocol) is an open standard that lets an AI assistant safely use your tools, such as a CRM, calendar or spreadsheet. It means the AI can do tasks, not just answer questions, with permissions you control and a log of every action.",
+  },
+
+  // After launch
+  {
+    group: "After launch",
     q: "Do you offer support after launch?",
     a: "Yes. Every project includes a post-launch support window, and monthly maintenance plans are available for updates, backups and monitoring.",
   },
-  {
-    q: "What do I need to get started?",
-    a: "Just an idea of what you want. Send us a short email about your business and goals, and we’ll reply with questions and a suggested plan.",
-  },
 ];
 
-export const stack = [
-  "Next.js",
-  "React",
-  "Flutter",
-  "TypeScript",
-  "Laravel",
-  "Node.js",
-  "Python",
-  "PostgreSQL",
-  "MySQL",
-  "Firebase",
-  "AWS",
-  "Cloudflare",
-  "Stripe",
-  "Razorpay",
-  "OpenAI",
-  "Claude",
+export type StackSection = { label?: string; items: string[] };
+export type StackGroup = { label: string; dot: string; sections: StackSection[] };
+
+export const stackGroups: StackGroup[] = [
+  {
+    label: "Frontend & Mobile",
+    dot: "bg-[#4f46e5]",
+    sections: [
+      { label: "Web", items: ["Next.js", "React", "Vue.js", "Angular", "TypeScript"] },
+      { label: "Mobile", items: ["Flutter", "React Native", "Swift"] },
+    ],
+  },
+  {
+    label: "Backend",
+    dot: "bg-[#0e7490]",
+    sections: [
+      { label: "Server-side languages", items: ["PHP", "Node.js", "Python", "Go", "Java", "R"] },
+      { label: "Frameworks", items: ["Laravel", "Django"] },
+    ],
+  },
+  {
+    label: "Databases",
+    dot: "bg-[#1e293b]",
+    sections: [
+      { label: "SQL", items: ["MySQL", "PostgreSQL"] },
+      { label: "NoSQL & Search", items: ["MongoDB", "Firebase", "Elasticsearch", "Redis"] },
+    ],
+  },
+  { label: "Cloud", dot: "bg-[#d97706]", sections: [{ items: ["AWS", "Google Cloud", "Azure", "Cloudflare"] }] },
+  { label: "Payments & AI", dot: "bg-[#059669]", sections: [{ items: ["Stripe", "Razorpay", "OpenAI", "Claude"] }] },
+];
+
+const faqAnswer = (start: string) => faqs.find((faq) => faq.q.startsWith(start))?.a ?? "";
+
+export type ChatQa = { q: string; a: string; link?: { href: string; label: string } };
+
+export const chatQa: ChatQa[] = [
+  {
+    q: "What services do you offer?",
+    a: "We build websites and web apps, Android and iOS mobile apps, AI-based products such as chatbots and agents, UI/UX design, backend and cloud systems, and we maintain them after launch.",
+    link: { href: "/services", label: "See all services" },
+  },
+  { q: "How long does a website take?", a: faqAnswer("How long") },
+  { q: "Do you build mobile apps?", a: faqAnswer("Do you build both") },
+  { q: "Can you add AI to my website?", a: faqAnswer("Can you add AI") },
+  {
+    q: "How much will it cost?",
+    a: "Cost depends on what you need, so every project gets a written scope and a fixed quote after a short discussion. Tell us your idea and we will send one.",
+  },
+  { q: "Who owns the code?", a: faqAnswer("Who owns") },
+  { q: "Do you offer support after launch?", a: faqAnswer("Do you offer support") },
+  { q: "Will it work on mobile phones?", a: faqAnswer("Will my website work") },
+  { q: "Can the chatbot reply in Hindi?", a: faqAnswer("Will the AI chatbot") },
+  { q: "What is MCP?", a: faqAnswer("What is MCP") },
+  { q: "How do we get started?", a: faqAnswer("What do I need") },
 ];

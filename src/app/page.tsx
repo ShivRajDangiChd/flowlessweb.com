@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { Faq } from "@/components/faq";
 import { HeroVisual } from "@/components/hero-visual";
 import { CategoryIcon, ProjectIcon } from "@/components/illustrations";
 import { SiteShell } from "@/components/site-shell";
+import { WebModel } from "@/components/web-model";
 import { Check, Eyebrow, PrimaryButton } from "@/components/ui";
-import { categories, projectTypes, site, stack, whyUs } from "@/data/site";
+import { categories, projectTypes, site, stackGroups, whyUs } from "@/data/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -42,13 +44,36 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="border-y border-[var(--line)] bg-[var(--panel)]">
-          <div className="mx-auto max-w-6xl px-6 py-8">
-            <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium text-[var(--muted)]">
-              {stack.map((item) => (
-                <li key={item}>{item}</li>
+        <section aria-labelledby="tech-heading" className="border-y border-[var(--line)] bg-[var(--panel)]">
+          <div className="mx-auto max-w-6xl px-6 py-12">
+            <h2 id="tech-heading" className="text-center font-mono text-[11px] tracking-[0.2em] text-[var(--muted)] uppercase">
+              Technologies we work with
+            </h2>
+            <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-8 lg:grid-cols-5">
+              {stackGroups.map((group) => (
+                <div key={group.label} className="col-span-1 first:col-span-2 sm:first:col-span-1">
+                  <h3 className="flex items-center gap-2 text-sm font-semibold">
+                    <span className={`size-2.5 rounded-full ${group.dot}`} aria-hidden="true" />
+                    {group.label}
+                  </h3>
+                  {group.sections.map((section, index) => (
+                    <div key={section.label ?? index} className="mt-3">
+                      {section.label ? (
+                        <p className="text-[11px] font-semibold tracking-wide text-slate-500 uppercase">{section.label}</p>
+                      ) : null}
+                      <ul className="mt-2 space-y-2 border-l border-[var(--line)] pl-4">
+                        {section.items.map((item) => (
+                          <li key={item} className="relative text-sm text-slate-700">
+                            <span className="absolute top-1/2 -left-[19px] size-1.5 -translate-y-1/2 rounded-full bg-slate-300" aria-hidden="true" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
 
@@ -76,6 +101,8 @@ export default function HomePage() {
             ))}
           </ul>
         </section>
+
+        <WebModel />
 
         <section className="bg-[var(--ink)] text-white">
           <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[1fr_1fr] lg:items-center">
@@ -116,6 +143,8 @@ export default function HomePage() {
             ))}
           </ul>
         </section>
+
+        <Faq />
 
         <section className="mx-auto max-w-6xl px-6 pb-24">
           <div className="glow rounded-3xl border border-[var(--line)] bg-[var(--panel)] px-8 py-16 text-center">

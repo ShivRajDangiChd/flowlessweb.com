@@ -47,12 +47,12 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             <h2 className="font-mono text-[11px] tracking-[0.2em] text-[var(--accent-2)] uppercase">Contact</h2>
             <p className="mt-4 text-sm text-white/70">Have a project in mind?</p>
             <EnquiryButton className="mt-2 inline-block text-sm font-medium text-white hover:text-[var(--accent-2)] cursor-pointer">
-              {site.email}
+              Email us
             </EnquiryButton>
           </div>
         </div>
         <div className="border-t border-white/10">
-          <p className="mx-auto max-w-6xl px-6 py-5 text-xs text-white/60">
+          <p className="mx-auto max-w-6xl px-6 py-5 pb-24 text-xs text-white/60">
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
         </div>

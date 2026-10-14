@@ -5,6 +5,8 @@ import { site } from "@/data/site";
 
 const EnquiryContext = createContext<(subject?: string) => void>(() => {});
 
+export const useEnquiry = () => useContext(EnquiryContext);
+
 export function EnquiryProvider({ children }: { children: React.ReactNode }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [subject, setSubject] = useState("New project enquiry");
@@ -28,6 +30,7 @@ export function EnquiryProvider({ children }: { children: React.ReactNode }) {
 
   const body = "Hi Flowlessweb,\n\nI'd like to discuss a project.\n\nAbout my business:\nWhat I need:\n";
   const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const whatsapp = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi Flowlessweb, I'd like to discuss: ${subject}`)}`;
   const mailApp = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   async function copy() {
@@ -57,7 +60,7 @@ export function EnquiryProvider({ children }: { children: React.ReactNode }) {
                 Tell us about your project
               </h2>
               <p className="mt-1.5 text-sm text-[var(--muted)]">
-                Send a short email to <span className="font-medium text-[var(--fg)]">{site.email}</span>. We reply with a plan and a fixed quote.
+                Send us a short note about your idea. We reply with questions, a plan and a fixed quote.
               </p>
             </div>
             <button
@@ -71,6 +74,9 @@ export function EnquiryProvider({ children }: { children: React.ReactNode }) {
           </div>
 
           <div className="mt-6 space-y-3">
+            <a href={whatsapp} target="_blank" rel="noopener noreferrer" className={optionClass}>
+              Chat on WhatsApp <span aria-hidden="true">↗</span>
+            </a>
             <a href={gmail} target="_blank" rel="noopener noreferrer" className={optionClass}>
               Open in Gmail <span aria-hidden="true">↗</span>
             </a>

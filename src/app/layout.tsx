@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { EnquiryProvider } from "@/components/enquiry";
+import { FloatingActions } from "@/components/floating-actions";
 import { site } from "@/data/site";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -30,7 +31,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <EnquiryProvider>{children}</EnquiryProvider>
+        <EnquiryProvider>
+          {children}
+          <FloatingActions />
+        </EnquiryProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

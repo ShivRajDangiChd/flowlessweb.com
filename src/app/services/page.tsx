@@ -1,8 +1,11 @@
+import { SpiderChart } from "@/components/spider-chart";
 import { AiFlow, CategoryIcon, ProjectIcon } from "@/components/illustrations";
+import { Faq } from "@/components/faq";
 import { SiteShell } from "@/components/site-shell";
 import { EnquiryButton } from "@/components/enquiry";
 import { Check, Eyebrow, PrimaryButton } from "@/components/ui";
-import { categories, faqs, process, projectTypes } from "@/data/site";
+import { categories, process, projectTypes } from "@/data/site";
+import { serviceCharts } from "@/data/service-charts";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -43,6 +46,7 @@ export default function ServicesPage() {
         {categories.map((category, index) => {
           const dark = category.slug === "ai-products";
           const tinted = !dark && index % 2 === 1;
+          const chart = serviceCharts[category.slug];
           return (
             <section
               key={category.slug}
@@ -51,7 +55,7 @@ export default function ServicesPage() {
                 dark ? "bg-[var(--ink)] text-white" : tinted ? "bg-[var(--panel)]" : ""
               }`}
             >
-              <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[0.8fr_1.4fr]">
+              <div className="mx-auto grid max-w-6xl gap-12 px-6 pt-24 pb-14 lg:grid-cols-[0.8fr_1.4fr]">
                 <div className="lg:sticky lg:top-24 lg:self-start">
                   <CategoryIcon slug={category.slug} dark={dark} />
                   <h2 className="mt-5 text-3xl font-semibold tracking-tight">{category.title}</h2>
@@ -90,7 +94,7 @@ export default function ServicesPage() {
 
                 <div>
                   {dark ? (
-                    <div className="mb-8 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                    <div className="mb-8 rounded-2xl border border-white/10 bg-white/[0.03] p-4 lg:hidden">
                       <AiFlow />
                     </div>
                   ) : null}
@@ -130,6 +134,38 @@ export default function ServicesPage() {
                   </div>
                 </div>
               </div>
+              {chart ? (
+                <div className="mx-auto max-w-6xl px-6 pb-24">
+                  <p className={`font-mono text-xs tracking-[0.2em] uppercase ${dark ? "text-[var(--accent-2)]" : "text-[var(--accent-strong)]"}`}>
+                    {chart.eyebrow}
+                  </p>
+                  <h3 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight">{chart.heading}</h3>
+                  <div
+                    className={`mt-8 hidden rounded-3xl border p-4 lg:block ${
+                      dark ? "border-white/10 bg-white/[0.03]" : tinted ? "border-[var(--line)] bg-[var(--bg)]" : "border-[var(--line)] bg-[var(--panel)]"
+                    }`}
+                  >
+                    <SpiderChart config={chart.config} theme={dark ? "dark" : "light"} />
+                  </div>
+                  <ol className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-5">
+                    {chart.steps.map((step, i) => (
+                      <li key={step.title} className="flex gap-3">
+                        <span
+                          className={`grid size-6 shrink-0 place-items-center rounded-full font-mono text-[11px] font-bold ${
+                            dark ? "bg-white text-[var(--ink)]" : "bg-[var(--fg)] text-white"
+                          }`}
+                        >
+                          {i + 1}
+                        </span>
+                        <div>
+                          <h4 className="text-sm font-semibold">{step.title}</h4>
+                          <p className={`mt-1 text-sm leading-relaxed ${dark ? "text-white/70" : "text-[var(--muted)]"}`}>{step.text}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ) : null}
             </section>
           );
         })}
@@ -172,21 +208,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-3xl px-6 py-24">
-          <Eyebrow>FAQ</Eyebrow>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight">Common questions</h2>
-          <div className="mt-10 divide-y divide-[var(--line)] border-y border-[var(--line)]">
-            {faqs.map((faq) => (
-              <details key={faq.q} className="group py-5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">
-                  {faq.q}
-                  <span className="text-xl text-[var(--accent)] transition-transform group-open:rotate-45" aria-hidden="true">+</span>
-                </summary>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{faq.a}</p>
-              </details>
-            ))}
-          </div>
-        </section>
+        <Faq />
 
         <section className="mx-auto max-w-6xl px-6 pb-24 text-center">
           <h2 className="mx-auto max-w-xl text-3xl font-semibold tracking-tight">

@@ -9,6 +9,8 @@ import { EnquiryButton } from "@/components/enquiry";
 const links = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
 ];
 
 export function Header() {

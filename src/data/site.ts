@@ -1,5 +1,6 @@
 export const site = {
   name: "Flowlessweb",
+  legalName: "Yuvika Soft-Tech Pvt Ltd",
   slogan: "Flawless web. Effortless flow.",
   url: "https://flowlessweb.com",
   email: "shivdangi28@gmail.com",
@@ -528,4 +529,33 @@ export const chatQa: ChatQa[] = [
   { q: "Can the chatbot reply in Hindi?", a: faqAnswer("Will the AI chatbot") },
   { q: "What is MCP?", a: faqAnswer("What is MCP") },
   { q: "How do we get started?", a: faqAnswer("What do I need") },
+];
+
+export type TeamMember = {
+  role: string;
+  summary: string;
+  /** Role of the person this member reports to. Leave out for the top of the chart. */
+  reportsTo?: string;
+  /** Add the person's name once you have it. Until then the card shows the role only. */
+  name?: string;
+  /** Path under /public, for example "/team/founder.jpg". Square, at least 600px. */
+  photo?: string;
+  linkedin?: string;
+};
+
+export const team: TeamMember[] = [
+  {
+    role: "Founder",
+    summary: "Sets the direction, and works with clients on scope, quality and delivery.",
+  },
+  {
+    role: "Chief Product Officer",
+    reportsTo: "Founder",
+    summary: "Owns the product plan and design, and turns client goals into clear, buildable roadmaps.",
+  },
+  {
+    role: "Senior DevOps Engineer",
+    reportsTo: "Founder",
+    summary: "Looks after cloud setup, deployment, security, backups and uptime.",
+  },
 ];

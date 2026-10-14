@@ -28,6 +28,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             <ul className="mt-4 space-y-2.5 text-sm">
               <li><Link href="/" className={linkClass}>Home</Link></li>
               <li><Link href="/services" className={linkClass}>Services</Link></li>
+              <li><Link href="/blog" className={linkClass}>Blog</Link></li>
+              <li><Link href="/about" className={linkClass}>About Us</Link></li>
             </ul>
           </nav>
 
@@ -53,9 +55,15 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           </div>
         </div>
         <div className="border-t border-white/10">
-          <p className="mx-auto max-w-6xl px-6 py-5 pb-24 text-xs text-white/60">
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
-          </p>
+          <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-5 pb-24 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              © {new Date().getFullYear()} {site.name}, operated by {site.legalName}. All rights reserved.
+            </p>
+            <nav aria-label="Legal" className="flex gap-5">
+              <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-white">Terms &amp; Conditions</Link>
+            </nav>
+          </div>
         </div>
       </footer>
     </div>

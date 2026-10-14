@@ -31,10 +31,10 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 aria-current={active ? "page" : undefined}
-                className={`rounded-lg px-4 py-2 font-medium transition-colors ${
+                className={`px-4 py-2 font-medium underline-offset-[10px] transition-colors ${
                   active
-                    ? "bg-[var(--accent)]/10 text-[var(--accent-strong)]"
-                    : "text-slate-700 hover:bg-slate-100 hover:text-[var(--accent-strong)]"
+                    ? "text-[var(--accent-strong)] underline decoration-2"
+                    : "text-slate-700 hover:text-[var(--accent-strong)]"
                 }`}
               >
                 {link.label}
@@ -67,8 +67,8 @@ export function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className={`block rounded-lg px-3 py-3 font-medium ${
-                isActive(link.href) ? "bg-[var(--accent)]/10 text-[var(--accent-strong)]" : "text-slate-700"
+              className={`block px-3 py-3 font-medium underline-offset-[10px] ${
+                isActive(link.href) ? "text-[var(--accent-strong)] underline decoration-2" : "text-slate-700"
               }`}
             >
               {link.label}

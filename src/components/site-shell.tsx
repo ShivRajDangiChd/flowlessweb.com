@@ -17,7 +17,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             <Link href="/" aria-label="Flowlessweb home">
               <Logo />
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
+            <p className="mt-4 text-sm font-semibold text-[var(--accent-2)]">{site.slogan}</p>
+            <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/70">
               Web development and AI solutions for businesses that want to grow online.
             </p>
           </div>

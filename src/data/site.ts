@@ -1,5 +1,6 @@
 export const site = {
   name: "Flowlessweb",
+  slogan: "Flawless web. Effortless flow.",
   url: "https://flowlessweb.com",
   email: "shivdangi28@gmail.com",
   phone: "+919041925042",

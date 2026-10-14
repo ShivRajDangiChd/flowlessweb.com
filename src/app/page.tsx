@@ -21,7 +21,7 @@ export default function HomePage() {
         <section className="glow">
           <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 pt-20 pb-24 lg:grid-cols-[1.05fr_1fr] lg:pt-28">
             <div>
-              <Eyebrow>Web · Mobile · AI</Eyebrow>
+              <Eyebrow>{site.slogan}</Eyebrow>
               <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-[54px] sm:leading-[1.05]">
                 Websites, apps and{" "}
                 <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-3)] bg-clip-text text-transparent">

@@ -8,7 +8,7 @@ import { site } from "@/data/site";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const title = `${site.name} | AI-Powered Web Development`;
+const title = `${site.name} | ${site.slogan}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -45,6 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               url: site.url,
               email: site.email,
               description: site.description,
+              slogan: site.slogan,
             }),
           }}
         />

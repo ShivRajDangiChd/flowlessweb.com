@@ -550,6 +550,9 @@ export const team: TeamMember[] = [
   },
   {
     role: "Chief Product Officer",
+    name: "Shiv Raj",
+    photo: "/team/chief-product-officer.png",
+    linkedin: "https://www.linkedin.com/in/shivrajdangichd",
     reportsTo: "Founder",
     summary: "Owns the product plan and design, and turns client goals into clear, buildable roadmaps.",
   },

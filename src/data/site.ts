@@ -3,198 +3,271 @@ export const site = {
   url: "https://flowlessweb.com",
   email: "shivdangi28@gmail.com",
   description:
-    "Flowlessweb is a web development and AI studio. We build business websites, e-commerce stores, web apps, booking portals, AI chatbots and automation for growing businesses.",
+    "Flowlessweb is a web, mobile app and AI development studio. We build websites, e-commerce stores, Android and iOS apps, AI-based products, chatbots and automation for growing businesses.",
 };
 
-export type Service = {
+export type Offering = {
+  title: string;
+  text: string;
+  points: string[];
+  delivery?: string;
+};
+
+export type ServiceCategory = {
   slug: string;
   title: string;
+  tagline: string;
   summary: string;
   bestFor: string;
-  features: string[];
   tech: string;
   delivery: string;
+  offerings: Offering[];
 };
 
-export const webServices: Service[] = [
+export const categories: ServiceCategory[] = [
   {
-    slug: "business-websites",
-    title: "Business & Corporate Websites",
+    slug: "web-development",
+    title: "Web Development",
+    tagline: "Websites, stores and web apps",
     summary:
-      "A professional online presence that explains what you do, builds trust and brings in enquiries.",
-    bestFor: "Companies, clinics, consultants, manufacturers, agencies",
-    features: [
-      "Custom design, 5–15 pages, fully responsive",
-      "Service pages written to rank on Google",
-      "Enquiry forms with email and WhatsApp alerts",
-      "Google Analytics, Search Console and schema markup",
-      "Blog and CMS so your team can edit content",
+      "From a five-page business site to a full SaaS platform. Fast, search-friendly and built to convert visitors into customers.",
+    bestFor: "Businesses, brands, startups and creators who need a strong online presence",
+    tech: "Next.js, React, TypeScript, Laravel, Node.js, headless CMS",
+    delivery: "3 days to 16 weeks, depending on scope",
+    offerings: [
+      {
+        title: "Business & Corporate Websites",
+        text: "A professional site that explains what you do, builds trust and brings in enquiries.",
+        points: ["5–15 custom-designed pages", "SEO-ready service pages", "Enquiry forms with email and WhatsApp alerts", "CMS so your team can edit content"],
+        delivery: "2–4 weeks",
+      },
+      {
+        title: "Landing Pages",
+        text: "One focused page built to convert ad, launch and campaign traffic into leads.",
+        points: ["Conversion-focused layout", "Leads sent to CRM or Google Sheet", "Under 2 s load on mobile", "Meta Pixel and Google Ads tracking"],
+        delivery: "3–7 days",
+      },
+      {
+        title: "E-commerce Stores",
+        text: "Online stores that load fast and make checkout effortless on a phone.",
+        points: ["Catalogue, filters and variants", "Razorpay, Stripe, UPI and COD", "Orders, inventory and customer accounts", "Shopify and WooCommerce also available"],
+        delivery: "4–8 weeks",
+      },
+      {
+        title: "Web Apps & SaaS Platforms",
+        text: "Full-stack software with logins, dashboards, billing and APIs that scale with your users.",
+        points: ["Authentication and role-based access", "Dashboards and admin panel", "Subscription billing and invoices", "Cloud deployment with backups"],
+        delivery: "6–16 weeks",
+      },
+      {
+        title: "Booking, Directory & Membership Portals",
+        text: "Platforms where customers book, search, apply or log in to their own account.",
+        points: ["Calendar booking with reminders", "Searchable listings with maps", "Member and student portals", "SMS, email and WhatsApp notifications"],
+        delivery: "4–10 weeks",
+      },
+      {
+        title: "Portfolio, Blog & Content Sites",
+        text: "Fast, elegant sites for creators, professionals and publishers.",
+        points: ["Case-study and gallery layouts", "Blog with categories and RSS", "Newsletter integration", "Top Core Web Vitals scores"],
+        delivery: "1–2 weeks",
+      },
     ],
-    tech: "Next.js, React, Tailwind, headless CMS",
-    delivery: "2–4 weeks",
   },
   {
-    slug: "landing-pages",
-    title: "Landing Pages",
+    slug: "mobile-apps",
+    title: "Mobile App Development",
+    tagline: "Android and iOS apps",
     summary:
-      "One focused page built to convert traffic from ads, launches and campaigns into leads.",
-    bestFor: "Ad campaigns, product launches, event and webinar signups",
-    features: [
-      "Conversion-focused layout and copy structure",
-      "Lead forms connected to your CRM or Google Sheet",
-      "Loads in under 2 seconds on mobile",
-      "Meta Pixel, Google Ads and conversion tracking",
-      "Variants for A/B testing",
-    ],
-    tech: "Next.js, Cloudflare",
-    delivery: "3–7 days",
-  },
-  {
-    slug: "ecommerce",
-    title: "E-commerce Stores",
-    summary:
-      "Online stores that load fast, look great on a phone and make checkout effortless.",
-    bestFor: "D2C brands, retailers, wholesalers, local sellers going online",
-    features: [
-      "Product catalogue with filters, search and variants",
-      "Razorpay, Stripe and UPI payments, COD support",
-      "Orders, inventory and customer accounts",
-      "Shipping integrations and invoice generation",
-      "Coupons, abandoned-cart emails and reviews",
-    ],
-    tech: "Custom Next.js stores, Shopify, WooCommerce",
-    delivery: "4–8 weeks",
-  },
-  {
-    slug: "web-apps",
-    title: "Web Apps & SaaS Platforms",
-    summary:
-      "Full-stack software with logins, dashboards, billing and APIs, built to scale with your users.",
-    bestFor: "Startups, internal tools, subscription products, marketplaces",
-    features: [
-      "User authentication and role-based access",
-      "Dashboards, reports and admin panel",
-      "Subscription billing and invoices",
-      "REST APIs and third-party integrations",
-      "Cloud deployment with backups and monitoring",
-    ],
-    tech: "Next.js, Laravel, Node.js, Python, PostgreSQL / MySQL",
+      "Apps your customers install and use every day. One codebase for Android and iOS, connected to a solid backend.",
+    bestFor: "Startups, service businesses and brands that want to reach customers on their phones",
+    tech: "Flutter or React Native, Firebase, Laravel / Node.js APIs",
     delivery: "6–16 weeks",
+    offerings: [
+      {
+        title: "Android & iOS Apps",
+        text: "Cross-platform apps from a single codebase, so you launch on both stores faster and maintain one product.",
+        points: ["Native-feel UI and smooth animations", "Push notifications", "Offline support where needed", "Play Store and App Store publishing"],
+        delivery: "8–16 weeks",
+      },
+      {
+        title: "Booking & On-demand Apps",
+        text: "Customer and provider apps for appointments, services and local delivery.",
+        points: ["Live booking and status tracking", "In-app payments", "Maps and location", "Admin panel for operations"],
+        delivery: "10–16 weeks",
+      },
+      {
+        title: "Shopping & Loyalty Apps",
+        text: "A mobile storefront for your e-commerce brand with offers and repeat-purchase features.",
+        points: ["Catalogue and cart", "Wallet, coupons and rewards", "Order tracking", "Connected to your existing store"],
+        delivery: "8–14 weeks",
+      },
+      {
+        title: "Companion Apps for Your Web Product",
+        text: "Take your SaaS or portal to mobile with the same accounts and data.",
+        points: ["Shared login and API", "Mobile-first workflows", "Notifications and reminders", "Ongoing releases"],
+        delivery: "6–12 weeks",
+      },
+    ],
   },
   {
-    slug: "booking-portals",
-    title: "Booking, Directory & Membership Portals",
+    slug: "ai-products",
+    title: "AI-based Products",
+    tagline: "Chatbots, agents and AI features",
     summary:
-      "Platforms where customers book appointments, browse listings, apply or log in to their own account.",
-    bestFor: "Clinics, salons, coaching, real estate, event and service businesses",
-    features: [
-      "Calendar booking with slots, staff and reminders",
-      "Searchable listings with maps and filters",
-      "Member and student portals with payments",
-      "SMS, email and WhatsApp notifications",
-      "Admin panel to manage everything in one place",
+      "AI built for a specific business problem: answering customers, qualifying leads, reading documents or powering a new product.",
+    bestFor: "Businesses that want to save hours of manual work, and founders building AI-first products",
+    tech: "OpenAI, Claude, Python, vector search, Next.js, WhatsApp API",
+    delivery: "2–10 weeks",
+    offerings: [
+      {
+        title: "AI Chatbots & Assistants",
+        text: "An assistant trained on your own services, prices and documents that answers customers around the clock.",
+        points: ["Answers only from your approved content", "Website chat and WhatsApp", "Captures leads, hands over to a human", "Hindi, English and more"],
+        delivery: "2–4 weeks",
+      },
+      {
+        title: "Workflow Automation",
+        text: "Connect forms, email, sheets and CRM, with AI handling the repetitive middle steps.",
+        points: ["Lead scoring and routing", "Invoice and document data extraction", "Auto follow-ups and reminders", "Daily and weekly reports"],
+        delivery: "1–4 weeks",
+      },
+      {
+        title: "AI Features for Your Product",
+        text: "Add smart search, summaries, recommendations and generation to an app you already run.",
+        points: ["Semantic search over products or documents", "Ask-your-documents Q&A (RAG)", "Personalised recommendations", "Text and image generation"],
+        delivery: "3–8 weeks",
+      },
+      {
+        title: "AI SaaS Products & Agents",
+        text: "A complete AI-first product, from idea to MVP: interface, backend, billing and the AI itself.",
+        points: ["Product scoping and MVP plan", "Agents that use tools and your data", "Usage tracking and subscription billing", "Cost and quality monitoring"],
+        delivery: "8–16 weeks",
+      },
+      {
+        title: "AI-assisted Content & SEO",
+        text: "Publish more useful pages without losing brand voice. AI drafts, a human reviews and approves.",
+        points: ["Content workflows with human review", "Programmatic SEO templates", "Bulk product descriptions", "Multi-language versions"],
+        delivery: "2–6 weeks",
+      },
     ],
-    tech: "Next.js, Laravel, Node.js, Firebase",
-    delivery: "4–10 weeks",
   },
   {
-    slug: "portfolio-blogs",
-    title: "Portfolio, Blog & Content Sites",
+    slug: "ui-ux-design",
+    title: "UI/UX Design",
+    tagline: "Design for web and mobile",
     summary:
-      "Fast, elegant sites for creators, professionals and publishers who care how their work is presented.",
-    bestFor: "Freelancers, photographers, writers, media and publishers",
-    features: [
-      "Case-study and gallery layouts",
-      "Blog with categories, authors and RSS",
-      "Newsletter signup integration",
-      "Image optimisation and top Core Web Vitals scores",
-      "Easy editing with a headless CMS",
+      "Interfaces that are clear, good-looking and easy to use. Approved before a single line of code is written.",
+    bestFor: "New products, redesigns and teams that already have developers",
+    tech: "Figma, design systems, usability testing",
+    delivery: "1–4 weeks",
+    offerings: [
+      {
+        title: "Website & App Design",
+        text: "Complete screen designs for every page and state, on desktop and mobile.",
+        points: ["Wireframes and visual design", "Responsive layouts", "Developer-ready Figma files", "Revisions until approved"],
+        delivery: "1–3 weeks",
+      },
+      {
+        title: "Interactive Prototypes",
+        text: "Click-through prototypes to test ideas with users or investors before building.",
+        points: ["Realistic flows", "Shareable link", "Feedback round", "Scope refined from findings"],
+        delivery: "1–2 weeks",
+      },
+      {
+        title: "Brand Kit & Design Systems",
+        text: "Colours, type, components and rules so every page and app feels like one brand.",
+        points: ["Logo usage and palette", "Reusable component library", "Guidelines for your team", "Consistent look across web and app"],
+        delivery: "2–4 weeks",
+      },
+      {
+        title: "UX Audit",
+        text: "A review of your current site or app with specific fixes for drop-offs and confusion.",
+        points: ["Review of key user journeys", "Prioritised improvement list", "Quick wins you can ship now", "Mobile and accessibility checks"],
+        delivery: "3–5 days",
+      },
     ],
-    tech: "Next.js, MDX, Sanity / Contentful",
-    delivery: "1–2 weeks",
   },
   {
-    slug: "redesign-care",
-    title: "Redesign, Speed & Maintenance",
+    slug: "backend-cloud",
+    title: "Backend, API & Cloud",
+    tagline: "The engine behind your product",
     summary:
-      "Give a slow or outdated website a fresh look, better rankings and someone who looks after it.",
-    bestFor: "Existing sites that are slow, dated, hacked or hard to update",
-    features: [
-      "Redesign that keeps your SEO rankings",
-      "Speed audit and Core Web Vitals fixes",
-      "Migration, hosting and domain setup",
-      "Security updates, backups and uptime monitoring",
-      "Monthly maintenance and small changes",
+      "Reliable servers, databases, integrations and deployments, so what you launch stays fast, secure and online.",
+    bestFor: "Products that need payments, integrations, scale or a safer foundation",
+    tech: "Laravel, Node.js, Python, PostgreSQL, MySQL, AWS, GCP, Azure, Cloudflare",
+    delivery: "1–8 weeks",
+    offerings: [
+      {
+        title: "REST & GraphQL APIs",
+        text: "Clean, documented APIs for your web and mobile apps.",
+        points: ["Authentication and permissions", "Versioned, documented endpoints", "Rate limiting and validation", "Automated tests"],
+        delivery: "2–6 weeks",
+      },
+      {
+        title: "Payments & Third-party Integrations",
+        text: "Connect the tools your business already uses.",
+        points: ["Stripe, Razorpay and PayPal", "SMS, email and WhatsApp APIs", "CRM, ERP and accounting", "Webhooks and syncing"],
+        delivery: "1–3 weeks",
+      },
+      {
+        title: "Cloud Setup & Deployment",
+        text: "Hosting, domains, SSL and pipelines set up in your own accounts.",
+        points: ["AWS, GCP, Azure or Cloudflare", "CI/CD for safe releases", "Backups and monitoring", "Cost-conscious infrastructure"],
+        delivery: "3 days to 2 weeks",
+      },
+      {
+        title: "Database Design & Migration",
+        text: "Move to a better structure or a new platform without losing data.",
+        points: ["Schema design", "Safe data migration", "Performance tuning", "Reporting-ready data"],
+        delivery: "1–4 weeks",
+      },
     ],
-    tech: "Whatever you run today, moving to Next.js if it helps",
-    delivery: "2–4 weeks",
+  },
+  {
+    slug: "maintenance-support",
+    title: "Maintenance & Support",
+    tagline: "We keep it running",
+    summary:
+      "Launching is the start. We handle updates, fixes, security and improvements so your site or app keeps performing.",
+    bestFor: "Any live website or app that matters to your business",
+    tech: "Monitoring, backups, performance tooling",
+    delivery: "Ongoing, monthly",
+    offerings: [
+      {
+        title: "Monthly Care Plans",
+        text: "A fixed monthly plan for updates, fixes and small changes.",
+        points: ["Content and small feature changes", "Bug fixes with priority response", "Monthly summary of work done", "Cancel anytime"],
+      },
+      {
+        title: "Security & Backups",
+        text: "Protect your site and your data.",
+        points: ["Software and plugin updates", "Daily backups and restore tests", "Uptime monitoring and alerts", "Malware clean-up if ever needed"],
+      },
+      {
+        title: "Speed & SEO Tune-ups",
+        text: "Faster pages and better rankings over time.",
+        points: ["Core Web Vitals fixes", "Technical SEO checks", "Search Console reports", "Redesign that protects rankings"],
+      },
+    ],
   },
 ];
 
-export type AiService = {
-  slug: string;
-  title: string;
-  summary: string;
-  example: string;
-  features: string[];
-};
-
-export const aiServices: AiService[] = [
+export const whyUs = [
   {
-    slug: "ai-chatbots",
-    title: "AI Chatbots & Assistants",
-    summary:
-      "An assistant trained on your own services, prices and documents that answers customers instantly, any hour of the day.",
-    example:
-      "A clinic bot that answers fee and timing questions, then books the appointment.",
-    features: [
-      "Answers only from your approved content",
-      "Website chat and WhatsApp",
-      "Captures name and number, then hands over to a human",
-      "Hindi, English and other languages",
-    ],
+    title: "One team for web, mobile and AI",
+    text: "No juggling agencies. Design, development, backend and AI are handled by the same people.",
   },
   {
-    slug: "ai-automation",
-    title: "Workflow Automation",
-    summary:
-      "Connect your forms, email, sheets and CRM and let AI handle the repetitive middle steps.",
-    example:
-      "Every new enquiry is scored, summarised and sent to the right salesperson within a minute.",
-    features: [
-      "Lead qualification and routing",
-      "Invoice, resume and document data extraction",
-      "Automatic follow-up emails and reminders",
-      "Daily and weekly reports sent to you",
-    ],
+    title: "Fixed quote, written scope",
+    text: "You know the features, timeline and price before work starts. No surprise bills.",
   },
   {
-    slug: "ai-features",
-    title: "AI Features Inside Your Product",
-    summary:
-      "Add smart search, summaries, recommendations and generation to a website or app you already run.",
-    example:
-      "An online store whose search understands “red wedding saree under 5000”.",
-    features: [
-      "Semantic search over products or documents",
-      "Ask-your-documents Q&A (RAG)",
-      "Personalised recommendations",
-      "Text and image generation inside your app",
-    ],
+    title: "You own everything",
+    text: "Code, domain and hosting accounts are set up in your name.",
   },
   {
-    slug: "ai-content-seo",
-    title: "AI-Assisted Content & SEO",
-    summary:
-      "Publish more useful pages without losing your brand voice. AI drafts, a human edits and approves.",
-    example:
-      "500 unique city and service pages for a franchise, each reviewed before going live.",
-    features: [
-      "Content workflows with human review",
-      "Programmatic SEO page templates",
-      "Product descriptions in bulk",
-      "Multi-language versions of your site",
-    ],
+    title: "Support after launch",
+    text: "Every project includes a support window, and care plans are available when you need more.",
   },
 ];
 
@@ -276,6 +349,10 @@ export const faqs = [
     a: "A landing page takes days, a business website 2–4 weeks, and an online store or web app 4–16 weeks depending on features. You get the exact timeline in writing before we start.",
   },
   {
+    q: "Do you build both Android and iOS apps?",
+    a: "Yes. We build cross-platform apps from one codebase, so you launch on both Google Play and the App Store together and maintain a single product.",
+  },
+  {
     q: "Can you add AI to my existing website?",
     a: "Yes. A chatbot, smart search or automation can be added to most existing sites without rebuilding them.",
   },
@@ -300,6 +377,7 @@ export const faqs = [
 export const stack = [
   "Next.js",
   "React",
+  "Flutter",
   "TypeScript",
   "Laravel",
   "Node.js",

@@ -1,7 +1,4 @@
-import { site } from "@/data/site";
-
-export const mailto = (subject?: string) =>
-  `mailto:${site.email}${subject ? `?subject=${encodeURIComponent(subject)}` : ""}`;
+import { EnquiryButton } from "@/components/enquiry";
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
@@ -9,14 +6,14 @@ export function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function PrimaryButton({ href, children }: { href: string; children: React.ReactNode }) {
+export function PrimaryButton({ subject, children }: { subject?: string; children: React.ReactNode }) {
   return (
-    <a
-      href={href}
-      className="inline-block rounded-full bg-[var(--fg)] px-7 py-3 text-sm font-medium text-white transition-opacity hover:opacity-85"
+    <EnquiryButton
+      subject={subject}
+      className="inline-block cursor-pointer rounded-full bg-[var(--accent)] px-7 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_-10px_rgba(79,70,229,0.7)] transition-colors hover:bg-[var(--accent-strong)]"
     >
       {children}
-    </a>
+    </EnquiryButton>
   );
 }
 

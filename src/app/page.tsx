@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { HeroVisual } from "@/components/hero-visual";
+import { CategoryIcon, ProjectIcon } from "@/components/illustrations";
 import { SiteShell } from "@/components/site-shell";
-import { Check, Eyebrow, PrimaryButton, mailto } from "@/components/ui";
-import { aiServices, faqs, process, projectTypes, site, stack, webServices } from "@/data/site";
+import { Check, Eyebrow, PrimaryButton } from "@/components/ui";
+import { categories, projectTypes, site, stack, whyUs } from "@/data/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: `${site.name} | Web Development & AI Solutions Company`,
+  title: `${site.name} | Web, Mobile App & AI Development Company`,
   description: site.description,
   path: "/",
 });
@@ -18,29 +19,24 @@ export default function HomePage() {
         <section className="glow">
           <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 pt-20 pb-24 lg:grid-cols-[1.05fr_1fr] lg:pt-28">
             <div>
-              <Eyebrow>Web development &amp; AI studio</Eyebrow>
+              <Eyebrow>Web · Mobile · AI</Eyebrow>
               <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-[54px] sm:leading-[1.05]">
-                Websites that sell.{" "}
-                <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] bg-clip-text text-transparent">
-                  AI that works for you.
-                </span>
+                Websites, apps and{" "}
+                <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-3)] bg-clip-text text-transparent">
+                  AI products
+                </span>{" "}
+                for growing businesses.
               </h1>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--muted)]">
-                We design and build business websites, online stores, web apps and booking
-                portals, and add AI chatbots and automation that answer customers and handle
-                the busywork.
+                Flowlessweb designs and builds the digital side of your business, from the
+                first page to the AI that runs behind it.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-4">
-                <PrimaryButton href={mailto("New project enquiry")}>Get a free quote</PrimaryButton>
-                <Link href="/services" className="text-sm font-medium hover:text-[var(--accent)]">
-                  Explore services →
+                <PrimaryButton subject="New project enquiry">Get a free quote</PrimaryButton>
+                <Link href="/services" className="text-sm font-semibold text-[var(--accent-strong)] hover:underline">
+                  See all services →
                 </Link>
               </div>
-              <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--muted)]">
-                <li className="flex gap-2"><Check />Fixed quote, written scope</li>
-                <li className="flex gap-2"><Check />You own the code</li>
-                <li className="flex gap-2"><Check />Post-launch support</li>
-              </ul>
             </div>
             <HeroVisual />
           </div>
@@ -48,10 +44,7 @@ export default function HomePage() {
 
         <section className="border-y border-[var(--line)] bg-[var(--panel)]">
           <div className="mx-auto max-w-6xl px-6 py-8">
-            <p className="text-center font-mono text-[11px] tracking-[0.2em] text-[var(--muted)] uppercase">
-              Built with modern, proven technology
-            </p>
-            <ul className="mt-5 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium text-[var(--muted)]">
+            <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium text-[var(--muted)]">
               {stack.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -60,127 +53,85 @@ export default function HomePage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-6 py-24">
-          <Eyebrow>Web development</Eyebrow>
+          <Eyebrow>What we do</Eyebrow>
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            Whatever kind of website you need, we build it.
+            Six ways we help your business grow.
           </h2>
-          <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--line)] sm:grid-cols-2 lg:grid-cols-3">
-            {webServices.map((service) => (
-              <li key={service.slug} className="bg-[var(--panel)]">
-                <Link href={`/services#${service.slug}`} className="block h-full p-7 transition-colors hover:bg-[var(--bg)]">
-                  <h3 className="font-semibold">{service.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{service.summary}</p>
-                  <p className="mt-4 font-mono text-[11px] tracking-wider text-[var(--accent)] uppercase">
-                    {service.delivery}
-                  </p>
+          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {categories.map((category) => (
+              <li key={category.slug}>
+                <Link
+                  href={`/services#${category.slug}`}
+                  className="group block h-full rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-7 transition-all hover:-translate-y-0.5 hover:border-[var(--accent)] hover:shadow-[0_18px_40px_-24px_rgba(79,70,229,0.5)]"
+                >
+                  <CategoryIcon slug={category.slug} />
+                  <h3 className="mt-5 text-lg font-semibold tracking-tight">{category.title}</h3>
+                  <p className="mt-1 text-sm font-medium text-[var(--accent-strong)]">{category.tagline}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{category.summary}</p>
+                  <span className="mt-5 inline-block text-sm font-semibold text-[var(--accent-strong)] group-hover:underline">
+                    Learn more →
+                  </span>
                 </Link>
               </li>
             ))}
-            <li className="flex items-center bg-[var(--fg)] p-7 text-white">
-              <div>
-                <h3 className="font-semibold">Not sure which one you need?</h3>
-                <a href={mailto("Help me choose")} className="mt-3 inline-block text-sm text-[var(--accent-2)]">
-                  Ask us, it&rsquo;s free →
-                </a>
-              </div>
-            </li>
           </ul>
         </section>
 
-        <section className="bg-[var(--fg)] text-white">
-          <div className="mx-auto max-w-6xl px-6 py-24">
-            <p className="font-mono text-xs tracking-[0.2em] text-[var(--accent-2)] uppercase">AI solutions</p>
-            <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-              Practical AI that saves hours and wins customers.
-            </h2>
-            <p className="mt-4 max-w-xl text-white/65">
-              No buzzwords. Each solution below solves a specific business problem.
-            </p>
-            <div className="mt-12 grid gap-4 md:grid-cols-2">
-              {aiServices.map((service) => (
-                <article key={service.slug} className="rounded-2xl border border-white/10 bg-white/[0.04] p-7">
-                  <h3 className="text-lg font-semibold">{service.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/65">{service.summary}</p>
-                  <p className="mt-5 border-l-2 border-[var(--accent-2)] pl-4 text-sm text-white/85">
-                    <span className="font-mono text-[10px] tracking-widest text-[var(--accent-2)] uppercase">Example</span>
-                    <br />
-                    {service.example}
-                  </p>
-                </article>
-              ))}
+        <section className="bg-[var(--ink)] text-white">
+          <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[1fr_1fr] lg:items-center">
+            <div>
+              <p className="font-mono text-xs tracking-[0.2em] text-[var(--accent-2)] uppercase">Why Flowlessweb</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+                One team. Clear scope. No surprises.
+              </h2>
+              <p className="mt-4 max-w-md text-white/70">
+                Working with a development partner should feel simple. This is how we make it so.
+              </p>
             </div>
+            <ul className="space-y-5">
+              {whyUs.map((item) => (
+                <li key={item.title} className="flex gap-4">
+                  <span className="mt-1 text-[var(--accent-2)]"><Check /></span>
+                  <div>
+                    <h3 className="font-semibold">{item.title}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-white/70">{item.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
         <section className="mx-auto max-w-6xl px-6 py-24">
-          <Eyebrow>Project types</Eyebrow>
+          <Eyebrow>Industries</Eyebrow>
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            Built for your industry, not a one-size template.
+            Built around the way your industry works.
           </h2>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {projectTypes.map((type) => (
-              <article key={type.name} className="rounded-2xl border border-[var(--line)] bg-[var(--panel)] p-6">
-                <h3 className="font-semibold">{type.name}</h3>
-                <p className="mt-2 text-sm text-[var(--muted)]">{type.blurb}</p>
-                <ul className="mt-4 flex flex-wrap gap-1.5">
-                  {type.features.map((feature) => (
-                    <li key={feature} className="rounded-full bg-black/5 px-2.5 py-1 text-xs">
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </article>
+              <li key={type.name} className="flex items-center gap-3 rounded-xl border border-[var(--line)] bg-[var(--panel)] p-4">
+                <ProjectIcon name={type.name} />
+                <span className="text-sm font-medium">{type.name}</span>
+              </li>
             ))}
-          </div>
-        </section>
-
-        <section className="border-y border-[var(--line)] bg-[var(--panel)]">
-          <div className="mx-auto max-w-6xl px-6 py-24">
-            <Eyebrow>How we work</Eyebrow>
-            <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-              A clear process, no surprises.
-            </h2>
-            <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {process.map((item) => (
-                <li key={item.step} className="border-t-2 border-[var(--fg)] pt-5">
-                  <span className="font-mono text-xs text-[var(--accent)]">{item.step}</span>
-                  <h3 className="mt-2 font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{item.text}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-3xl px-6 py-24">
-          <Eyebrow>FAQ</Eyebrow>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight">Common questions</h2>
-          <div className="mt-10 divide-y divide-[var(--line)] border-y border-[var(--line)]">
-            {faqs.map((faq) => (
-              <details key={faq.q} className="group py-5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">
-                  {faq.q}
-                  <span className="text-xl text-[var(--accent)] transition-transform group-open:rotate-45" aria-hidden="true">+</span>
-                </summary>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{faq.a}</p>
-              </details>
-            ))}
-          </div>
+          </ul>
         </section>
 
         <section className="mx-auto max-w-6xl px-6 pb-24">
           <div className="glow rounded-3xl border border-[var(--line)] bg-[var(--panel)] px-8 py-16 text-center">
             <h2 className="mx-auto max-w-xl text-3xl font-semibold tracking-tight">
-              Tell us about your project.
+              Have a project in mind?
             </h2>
             <p className="mx-auto mt-3 max-w-md text-[var(--muted)]">
-              Send a short note on what you want to build. You&rsquo;ll get a reply with questions,
-              a suggested plan and a fixed quote.
+              Send us a short note about your idea. We&rsquo;ll reply with questions, a suggested
+              plan and a fixed quote.
             </p>
-            <div className="mt-8">
-              <PrimaryButton href={mailto("New project enquiry")}>Email us your idea</PrimaryButton>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
+              <PrimaryButton subject="New project enquiry">Email us your idea</PrimaryButton>
+              <Link href="/services" className="text-sm font-semibold text-[var(--accent-strong)] hover:underline">
+                Explore services →
+              </Link>
             </div>
-            <p className="mt-4 text-sm text-[var(--muted)]">{site.email}</p>
           </div>
         </section>
       </main>

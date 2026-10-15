@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChatWidget } from "@/components/chat-widget";
 import { site } from "@/data/site";
 
-const whatsappHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi Flowlessweb, I'd like to discuss a project.")}`;
+const whatsappHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi Flawless Web, I'd like to discuss a project.")}`;
 
 export function FloatingActions() {
   const [toast, setToast] = useState("");

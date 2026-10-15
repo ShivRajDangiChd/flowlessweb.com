@@ -28,9 +28,9 @@ export function EnquiryProvider({ children }: { children: React.ReactNode }) {
     return () => dialog.removeEventListener("click", onClick);
   }, []);
 
-  const body = "Hi Flowlessweb,\n\nI'd like to discuss a project.\n\nAbout my business:\nWhat I need:\n";
+  const body = "Hi Flawless Web,\n\nI'd like to discuss a project.\n\nAbout my business:\nWhat I need:\n";
   const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  const whatsapp = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi Flowlessweb, I'd like to discuss: ${subject}`)}`;
+  const whatsapp = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi Flawless Web, I'd like to discuss: ${subject}`)}`;
   const mailApp = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   async function copy() {

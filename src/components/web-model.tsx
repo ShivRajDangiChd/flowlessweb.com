@@ -172,7 +172,7 @@ export function WebModel() {
         </div>
 
         <div className="mt-12 rounded-2xl border border-[var(--line)] bg-[var(--bg)] p-6 sm:p-8">
-          <h3 className="text-lg font-semibold tracking-tight">Flowlessweb builds all three layers, and the AI on top.</h3>
+          <h3 className="text-lg font-semibold tracking-tight">Flawless Web builds all three layers, and the AI on top.</h3>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
               ["Frontend & mobile", "Websites, web apps and Android/iOS apps", "/services#web-development"],

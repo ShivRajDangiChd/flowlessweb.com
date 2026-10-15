@@ -30,7 +30,7 @@ export default function HomePage() {
                 for growing businesses.
               </h1>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--muted)]">
-                Flowlessweb designs and builds the digital side of your business, from the
+                Flawless Web designs and builds the digital side of your business, from the
                 first page to the AI that runs behind it.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -107,7 +107,7 @@ export default function HomePage() {
         <section className="bg-[var(--ink)] text-white">
           <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <p className="font-mono text-xs tracking-[0.2em] text-[var(--accent-2)] uppercase">Why Flowlessweb</p>
+              <p className="font-mono text-xs tracking-[0.2em] text-[var(--accent-2)] uppercase">Why Flawless Web</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
                 One team. Clear scope. No surprises.
               </h2>

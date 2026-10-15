@@ -1,13 +1,13 @@
 export const site = {
-  name: "Flowlessweb",
+  name: "Flawless Web",
   legalName: "Yuvika Soft-Tech Pvt Ltd",
   slogan: "Flawless web. Effortless flow.",
-  url: "https://flowlessweb.com",
+  url: "https://flawlessweb.in",
   email: "shivdangi28@gmail.com",
   phone: "+919041925042",
   whatsapp: "919041925042",
   description:
-    "Flowlessweb is a web, mobile app and AI development studio. We build websites, e-commerce stores, Android and iOS apps, AI-based products, chatbots and automation for growing businesses.",
+    "Flawless Web is a web, mobile app and AI development studio. We build websites, e-commerce stores, Android and iOS apps, AI-based products, chatbots and automation for growing businesses.",
 };
 
 export type Offering = {

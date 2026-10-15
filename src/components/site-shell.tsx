@@ -14,7 +14,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <footer className="bg-[var(--ink)] text-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <Link href="/" aria-label="Flowlessweb home">
+            <Link href="/" aria-label="Flawless Web home">
               <Logo />
             </Link>
             <p className="mt-4 text-sm font-semibold text-[var(--accent-2)]">{site.slogan}</p>

@@ -38,7 +38,7 @@ function HeadsetIcon() {
 
 const welcome: Message = {
   from: "bot",
-  text: "Hi! I'm the Flowlessweb assistant. Pick a question below, or reach us with the icons at the bottom.",
+  text: "Hi! I'm the Flawless Web assistant. Pick a question below, or reach us with the icons at the bottom.",
 };
 
 export function ChatWidget({
@@ -80,14 +80,14 @@ export function ChatWidget({
 
   return (
     <section
-      aria-label="Chat with Flowlessweb"
+      aria-label="Chat with Flawless Web"
       className="flex h-[min(560px,calc(100vh-8rem))] w-[380px] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-2xl border border-[var(--line)] bg-white shadow-[0_24px_70px_-20px_rgba(15,23,42,0.5)]"
     >
       <header className="flex items-center justify-between bg-gradient-to-r from-[var(--accent)] to-[var(--accent-3)] px-5 py-4 text-white">
         <div className="flex items-center gap-3">
           <span className="grid size-9 place-items-center rounded-full bg-white/20 text-sm font-bold">F</span>
           <div className="leading-tight">
-            <p className="text-sm font-semibold">Flowlessweb Assistant</p>
+            <p className="text-sm font-semibold">Flawless Web Assistant</p>
             <p className="text-xs text-white/80">Quick answers to common questions</p>
           </div>
         </div>

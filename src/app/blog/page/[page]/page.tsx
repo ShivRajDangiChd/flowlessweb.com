@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { page } = await params;
   return pageMetadata({
     title: `Blog, page ${page}`,
-    description: "More plain-language answers about websites, apps, backend systems and AI from the Flowlessweb team.",
+    description: "More plain-language answers about websites, apps, backend systems and AI from the Flawless Web team.",
     path: `/blog/page/${page}`,
   });
 }
